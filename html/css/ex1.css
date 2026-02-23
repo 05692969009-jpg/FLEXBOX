@@ -1,0 +1,237 @@
+/* Isso aplica o tamanho a TODOS os quadrados dentro de qualquer div flex */
+[class^="flex"] div {
+    width: 200px;
+    height: 100px;
+}
+
+/* Cores fixas para facilitar a identificação */
+.quadrado1 { background-color: red; }
+.quadrado2 { background-color: blue; }
+.quadrado3 { background-color: rgb(60, 95, 8); }
+
+/* Configuração comum de todos os containers (espaçamento entre as fileiras) */
+[class^="flex"] {
+    height: 28vh;
+    display: flex;
+    margin-bottom: 10px; /* Margem para os containers não grudarem */
+}
+
+/* ======================================================
+   SEÇÃO DE TÍTULOS (não interfere no flex)
+====================================================== */
+body {
+    font-family: monospace;
+    background: #111;
+    color: #eee;
+    padding: 10px;
+}
+
+h2 {
+    background: #333;
+    color: #FFD700;
+    padding: 6px 12px;
+    margin: 20px 0 6px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-left: 4px solid #FFD700;
+}
+
+p.info {
+    font-size: 12px;
+    color: #aaa;
+    margin: 0 0 4px 4px;
+}
+
+/*<<<<<<<---------------------=================================== FLEX-ROW ---------------------===================================>>>>>>> */
+
+/* FLEX 1: O básico (Início) */
+.flex1 {
+    background-color: rgb(68, 65, 15);
+    flex-direction: row;
+    justify-content: flex-start; /* Alinha tudo à esquerda */
+}
+
+/* FLEX 2: Empurrar para o fim */
+.flex2 {
+    background-color: rgb(68, 65, 15);
+    flex-direction: row;
+    justify-content: flex-end; /* Alinha tudo à direita */
+}
+
+/* FLEX 3: Centralização total */
+.flex3 {
+    background-color: rgb(15, 44, 68);
+    flex-direction: row;
+    justify-content: center; /* Agrupa tudo no meio */
+}
+
+/* FLEX 4: Espaço Entre (Space-between) */
+.flex4 {
+    background-color: rgb(39, 3, 3);
+    flex-direction: row;
+    justify-content: space-between; /* Gruda nas pontas, sobra espaço no meio */
+}
+
+/* FLEX 5: Espaço ao Redor (Space-around) */
+.flex5 {
+    background-color: black;
+    flex-direction: row;
+    justify-content: space-around; /* Espaço nas laterais de cada item */
+}
+
+/* FLEX 6: Espaço Igualitário (Space-evenly) */
+.flex6 {
+    background-color: rgb(18, 34, 2);
+    flex-direction: row;
+    justify-content: space-evenly; /* Todos os vãos têm exatamente o mesmo tamanho */
+}
+
+/*<<<<<<<---------------------=================================== FLEX-ROW REVERSE ---------------------===================================>>>>>>> */
+
+/* FLEX 7: Row-Reverse + flex-start
+   ⚠️ ATENÇÃO: em row-reverse, flex-start fica na DIREITA! */
+.flex7 {
+    background-color: rgb(68, 65, 15);
+    flex-direction: row-reverse;
+    justify-content: flex-start; /* Agrupa à DIREITA (início invertido) */
+}
+
+/* FLEX 8: Row-Reverse + flex-end
+   flex-end fica na ESQUERDA quando invertido */
+.flex8 {
+    background-color: rgb(68, 65, 15);
+    flex-direction: row-reverse;
+    justify-content: flex-end; /* Agrupa à ESQUERDA (fim invertido) */
+}
+
+/* FLEX 9: Row-Reverse + center */
+.flex9 {
+    background-color: rgb(15, 44, 68);
+    flex-direction: row-reverse;
+    justify-content: center; /* Centro — igual ao row normal */
+}
+
+/* FLEX 10: Row-Reverse + space-between */
+.flex10 {
+    background-color: rgb(39, 3, 3);
+    flex-direction: row-reverse;
+    justify-content: space-between; /* Gruda nas pontas, mas a ORDEM está invertida */
+}
+
+/* FLEX 11: Row-Reverse + space-around */
+.flex11 {
+    background-color: black;
+    flex-direction: row-reverse;
+    justify-content: space-around; /* Espaço nas laterais — ordem invertida */
+}
+
+/* FLEX 12: Row-Reverse + space-evenly */
+.flex12 {
+    background-color: rgb(18, 34, 2);
+    flex-direction: row-reverse;
+    justify-content: space-evenly; /* Vãos iguais — ordem invertida */
+}
+
+/*<<<<<<<---------------------=================================== FLEX-COLUMN ---------------------===================================>>>>>>> */
+
+/* Em column, justify-content controla o eixo VERTICAL (de cima pra baixo) */
+
+/* FLEX 13: Column + flex-start */
+.flex13 {
+    height: 400px;
+    background-color: rgb(68, 65, 15);
+    flex-direction: column;
+    justify-content: flex-start; /* Empilha no TOPO */
+}
+
+/* FLEX 14: Column + flex-end */
+.flex14 {
+    height: 400px;
+    background-color: rgb(68, 65, 15);
+    flex-direction: column;
+    justify-content: flex-end; /* Empilha na BASE */
+}
+
+/* FLEX 15: Column + center */
+.flex15 {
+    height: 400px;
+    background-color: rgb(15, 44, 68);
+    flex-direction: column;
+    justify-content: center; /* Agrupa no MEIO vertical */
+}
+
+/* FLEX 16: Column + space-between */
+.flex16 {
+    height: 400px;
+    background-color: rgb(39, 3, 3);
+    flex-direction: column;
+    justify-content: space-between; /* Primeiro no topo, último na base, resto distribuído */
+}
+
+/* FLEX 17: Column + space-around */
+.flex17 {
+    height: 400px;
+    background-color: black;
+    flex-direction: column;
+    justify-content: space-around; /* Espaço vertical em volta de cada item */
+}
+
+/* FLEX 18: Column + space-evenly */
+.flex18 {
+    height: 400px;
+    background-color: rgb(18, 34, 2);
+    flex-direction: column;
+    justify-content: space-evenly; /* Todos os vãos verticais iguais */
+}
+
+/*<<<<<<<---------------------=================================== FLEX-COLUMN REVERSE ---------------------===================================>>>>>>> */
+
+/* Em column-reverse, flex-start fica na BAIXO (início invertido) */
+
+/* FLEX 19: Column-Reverse + flex-start */
+.flex19 {
+    height: 400px;
+    background-color: rgb(68, 65, 15);
+    flex-direction: column-reverse;
+    justify-content: flex-start; /* Agrupa na BASE (início invertido) */
+}
+
+/* FLEX 20: Column-Reverse + flex-end */
+.flex20 {
+    height: 400px;
+    background-color: rgb(68, 65, 15);
+    flex-direction: column-reverse;
+    justify-content: flex-end; /* Agrupa no TOPO (fim invertido) */
+}
+
+/* FLEX 21: Column-Reverse + center */
+.flex21 {
+    height: 400px;
+    background-color: rgb(15, 44, 68);
+    flex-direction: column-reverse;
+    justify-content: center; /* Centro vertical — ordem invertida */
+}
+
+/* FLEX 22: Column-Reverse + space-between */
+.flex22 {
+    height: 400px;
+    background-color: rgb(39, 3, 3);
+    flex-direction: column-reverse;
+    justify-content: space-between; /* Gruda nas pontas — mas ordem invertida */
+}
+
+/* FLEX 23: Column-Reverse + space-around */
+.flex23 {
+    height: 400px;
+    background-color: black;
+    flex-direction: column-reverse;
+    justify-content: space-around; /* Espaço ao redor — ordem invertida */
+}
+
+/* FLEX 24: Column-Reverse + space-evenly */
+.flex24 {
+    height: 400px;
+    background-color: rgb(18, 34, 2);
+    flex-direction: column-reverse;
+    justify-content: space-evenly; /* Vãos iguais — ordem invertida */
+}
